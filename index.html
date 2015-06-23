@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="campNews">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Camper News</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.3/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div ng-controller="NewsController as news" id="content">
+		<div class="ui cards">
+			<div class="ui card" ng-repeat='article in news.newsData'>
+			  <div class="image">
+			    <img ng-src="{{news.photo(article)}}">
+			  </div>
+			  <div class="content">
+			    <a class="header" href="{{article.link}}">{{article.headline}}</a>
+			    <div class="meta">
+			      <span class="date">J{{article.author.username}}</span>
+			    </div>
+			    <div class="description">
+			      {{article.description}}
+			    </div>
+			  </div>
+			  <div class="extra content">
+			    <a>
+			      <i class="thumbs outline up icon"></i>
+			      {{article.upVotes.length}} 
+			    </a>
+			  </div>
+			</div>
+		</div>
+</body>
+</html>
+
+
+

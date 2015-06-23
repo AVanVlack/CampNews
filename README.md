@@ -4,6 +4,6 @@
 
 ------------
 
-This project is built using 
+This project is built using angular and semantic-ui.
 
-This project can be view running [on codepen](http://codepen.io/VanVlack/pen/YXrRzw)
+This project can be view running [on codepen.](http://codepen.io/VanVlack/pen/YXrRzw)
