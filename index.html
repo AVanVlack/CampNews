@@ -9,10 +9,16 @@
 	<script type="text/javascript" src="app.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.3/semantic.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 </head>
 <body>
+	<div class="ui center aligned header" id="head">
+			<h1 class="ui header">Free Code Camp - Camper News</h1>
+		</div>
+
 	<div ng-controller="NewsController as news" id="content">
-		<div class="ui cards">
+		
+		<div class="ui fluid cards">
 			<div class="ui card" ng-repeat='article in news.newsData'>
 			  <div class="image">
 			    <img ng-src="{{news.photo(article)}}">
@@ -23,13 +29,15 @@
 			      <span class="date">J{{article.author.username}}</span>
 			    </div>
 			    <div class="description">
-			      {{article.description}}
+			      <p>{{news.description(article)}}</p>
 			    </div>
 			  </div>
 			  <div class="extra content">
-			    <a>
+			    <a href="{{news.campLink(article.storyLink)}}">
 			      <i class="thumbs outline up icon"></i>
 			      {{article.upVotes.length}} 
+			      <i class="comments icon"></i>
+			      {{article.comments.length}}
 			    </a>
 			  </div>
 			</div>
